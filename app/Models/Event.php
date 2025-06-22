@@ -15,5 +15,6 @@ class Event extends Model
         'date',
         'time',
         'location',
+        'is_deleted'
     ];
 }

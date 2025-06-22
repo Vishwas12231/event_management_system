@@ -40,7 +40,7 @@
         </div>
 
         <button class="btn btn-primary" type="submit">Update Event</button>
-        <a href="{{ url('/admin/events') }}" class="btn btn-secondary">Cancel</a>
+        <a href="{{ route('admin.events') }}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
 @endsection
