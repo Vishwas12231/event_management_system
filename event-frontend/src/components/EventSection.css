@@ -1,0 +1,35 @@
+.event-section {
+  margin-bottom: 25px;
+}
+
+.section-header {
+  background: #ecf0f1;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.section-header:hover {
+  background: #dcdde1;
+}
+
+.section-content {
+  margin-top: 10px;
+}
+
+.no-events {
+  font-style: italic;
+  color: #888;
+  padding-left: 10px;
+}
+
+.section-header span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #555;
+}
