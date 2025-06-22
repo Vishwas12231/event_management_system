@@ -11,7 +11,7 @@ class EventAdminController extends Controller
     // Show all events
     public function index()
     {
-        $events = Event::orderBy('date', 'desc')->get();
+        $events = Event::where('is_delete', 'N')->orderBy('date', 'desc')->get();
         return view('admin.events.index', compact('events'));
     }
 
@@ -65,9 +65,15 @@ class EventAdminController extends Controller
     // Delete event
     public function destroy($id)
     {
-        $event = Event::findOrFail($id);
-        $event->delete();
+        $event = Event::find($id);
 
-        return redirect()->route('admin.events')->with('success', 'Event deleted successfully!');
+        if ($event) {
+            $event->is_delete = 1;
+            $event->save();
+
+            return redirect()->back()->with('success', 'Event deleted successfully.');
+        }
+
+        return redirect()->back()->with('error', 'Event not found.');
     }
 }
